@@ -4,6 +4,7 @@ from BeautifulSoup import BeautifulSoup
 import sys
 import urllib2
 import os.path
+import tempfile
 import urlparse
 import tidy
 import commands
@@ -32,14 +33,14 @@ menu_urls = [urlparse.urljoin(catering_url,x.parent['href']) for x in soup.findA
 print "%s %s" % (today1,today2)
 for menu_url in reversed(menu_urls):
 	#print menu_url
-	f = open("menu.pdf", "w")
+	f = tempfile.NamedTemporaryFile()
 	g = urllib2.urlopen(menu_url)
 	f.write(g.read())
-	f.close()
-
-	#cmd = "%s %s" % (os.path.expanduser("~/bin/pdf2txt.py"), "menu.pdf")
-	cmd = ";".join(["export PYTHONPATH=%s" % os.path.expanduser("~/lib/python"), "pdf2txt.py menu.pdf"])
+	f.flush()
+			# trouble with path sorted
+	cmd = ";".join(["export PYTHONPATH=%s" % os.path.expanduser("~/lib/python"), "pdf2txt.py %s" % f.name])
 	status, output = commands.getstatusoutput(cmd)
+	f.close()
 
 	if status != 0:
 		raise Exception, output
