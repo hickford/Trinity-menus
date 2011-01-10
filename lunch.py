@@ -1,7 +1,9 @@
 #!/usr/bin/python
 import datetime
 from BeautifulSoup import BeautifulSoup
+import sys
 import urllib2
+import os.path
 import urlparse
 import tidy
 import commands
@@ -35,9 +37,12 @@ for menu_url in reversed(menu_urls):
 	f.write(g.read())
 	f.close()
 
-	cmd = "pdf2txt.py menu.pdf"
+	#cmd = "%s %s" % (os.path.expanduser("~/bin/pdf2txt.py"), "menu.pdf")
+	cmd = ";".join(["export PYTHONPATH=%s" % os.path.expanduser("~/lib/python"), "pdf2txt.py menu.pdf"])
 	status, output = commands.getstatusoutput(cmd)
 
+	if status != 0:
+		raise Exception, output
 	output=output.strip()
 
 	filler = ["SHOULD YOU HAVE A FOOD ALLERGY PLEASE ADVISE THE CATERING MANAGER","DISHES MAY CONTAIN TRACES OF NUTS OR NUT BY-PRODUCTS","SOME OF THE FOOD PROVIDED AT THESE PREMISES CONTAINS INGREDIENTS PRODUCED FROM GENETICALLY MODIFIED SOYA BEANS AND MAIZE","FURTHER INFORMATION IS AVAILABLE FROM STAFF","Catering Department","MAY CONTAIN TRACES OF NUTS OR NUT BY-PRODUCTS"]
@@ -58,6 +63,8 @@ for menu_url in reversed(menu_urls):
 		words = x.groups()[0].strip()
 		words = words.replace("\n \n \n \n","\n \n")
 		print words
+		import sys
+		sys.exit()
 		break
 else:
 	raise Exception
