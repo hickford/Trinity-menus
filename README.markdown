@@ -1,7 +1,9 @@
 Trinity College hall menu script
 ==========
+This script downloads the hall menus from Trinity College Cambridge's [Catering Department](http://www.trin.cam.ac.uk/index.php?pageid=52) and extracts the current day's meals.
 
 Cronjob
 -------
-30 5 * * * PYTHONPATH=~/lib/python:"${PYTHONPATH}"; export PYTHONPATH; PATH=~/bin:"${PATH}"; TMPFILE=`mktemp`; lunch.py > $TMPFILE && mail -s "Trinity College hall menu" tchm-announce@srcf.ucam.org < $TMPFILE
+This emails the menus (if the script is successful) to a [mailing list](http://www.srcf.ucam.org/mailman/listinfo/tchm-announce)
 
+    30 5 * * * PYTHONPATH=~/lib/python:"${PYTHONPATH}"; export PYTHONPATH; PATH=~/bin:"${PATH}"; TMPFILE=`mktemp`; lunch.py > $TMPFILE && mail -s "Trinity College hall menu" tchm-announce@srcf.ucam.org < $TMPFILE
