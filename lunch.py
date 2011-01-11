@@ -16,7 +16,8 @@ today = datetime.date.today()		#+datetime.timedelta(days=-5)
 monday = today - datetime.timedelta(days=today.weekday())
 tomorrow = today + datetime.timedelta(days=1)
 
-dotw = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+import calendar
+dotw = list(calendar.day_name)
 
 catering_url = "http://www.trin.cam.ac.uk/index.php?pageid=52"
 page = urllib2.urlopen(catering_url)
