@@ -37,9 +37,10 @@ for menu_url in reversed(menu_urls):
 	g = urllib2.urlopen(menu_url)
 	f.write(g.read())
 	f.flush()
-			# trouble with path sorted
-	cmd = ";".join(["export PYTHONPATH=%s" % os.path.expanduser("~/lib/python"), "pdf2txt.py %s" % f.name])
+
+	cmd = "pdf2txt.py %s" % f.name
 	status, output = commands.getstatusoutput(cmd)
+#	print status,output
 	f.close()
 
 	if status != 0:
