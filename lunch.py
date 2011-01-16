@@ -41,7 +41,6 @@ for menu_url in reversed(menu_urls):
 
 	cmd = "pdf2txt.py %s" % f.name
 	status, output = commands.getstatusoutput(cmd)
-#	print status,output
 	f.close()
 
 	if status != 0:
@@ -55,7 +54,7 @@ for menu_url in reversed(menu_urls):
 
 	if today2 in output:
 
-		pattern = "\D(?:%s)(.*?)(%s|$)" % (today2,"|".join(dotw))
+		pattern = "\D(?:%s)(.*?)(%s|$)" % (today2,"|".join(set(dotw)-set([today1])))
 
 		p = re.compile(pattern,re.IGNORECASE | re.DOTALL)
 
