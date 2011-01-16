@@ -2,6 +2,15 @@ Trinity College hall menu script
 ==========
 This script downloads the hall menus from Trinity College Cambridge's [Catering Department](http://www.trin.cam.ac.uk/index.php?pageid=52) and extracts the current day's meals.
 
+Usage
+-------
+    Usage: lunch.py [options]
+    
+    Options:
+      -h, --help            show this help message and exit
+      -f FORWARD, --forward=FORWARD
+                            simulate n days in the future
+
 Cronjob
 -------
 This emails the menus (if the script is successful) to a [mailing list](http://www.srcf.ucam.org/mailman/listinfo/tchm-announce)
