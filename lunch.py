@@ -10,8 +10,13 @@ import tidy
 import commands
 import django.utils.dateformat
 import re
+import optparse
 
-today = datetime.date.today()		#+datetime.timedelta(days=-5)
+parser = optparse.OptionParser()
+parser.add_option("-f","--forward",type="int",dest="forward",default=0,help="simulate n days in the future")
+(options, args) = parser.parse_args()
+
+today = datetime.date.today() + datetime.timedelta(days=options.forward)
 #print today
 monday = today - datetime.timedelta(days=today.weekday())
 tomorrow = today + datetime.timedelta(days=1)
@@ -69,4 +74,4 @@ for menu_url in reversed(menu_urls):
 		sys.exit()
 		break
 else:
-	raise Exception
+	raise Exception, "found no menu for %s among %s" % (today,menu_urls)
