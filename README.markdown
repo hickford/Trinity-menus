@@ -10,6 +10,7 @@ Usage
       -h, --help            show this help message and exit
       -f FORWARD, --forward=FORWARD
                             simulate n days in the future
+      -v, --verbose         extra output useful for debugging
 
 Cronjob
 -------

@@ -14,9 +14,11 @@ import optparse
 
 parser = optparse.OptionParser()
 parser.add_option("-f","--forward",type="int",dest="forward",default=0,help="simulate n days in the future")
+parser.add_option("-v", "--verbose", help="extra output useful for debugging",action="store_true", dest="verbose", default=False)
 (options, args) = parser.parse_args()
 
 today = datetime.date.today() + datetime.timedelta(days=options.forward)
+
 #print today
 monday = today - datetime.timedelta(days=today.weekday())
 tomorrow = today + datetime.timedelta(days=1)
@@ -38,7 +40,8 @@ tomorrow1 = tomorrow.strftime("%A")
 menu_urls = [urlparse.urljoin(catering_url,x.parent['href']) for x in soup.findAll(text="Hall Menu")]
 print "%s %s" % (today1,today2)
 for menu_url in reversed(menu_urls):
-	#print menu_url
+	if options.verbose:
+		print menu_url
 	f = tempfile.NamedTemporaryFile()
 	g = urllib2.urlopen(menu_url)
 	f.write(g.read())
