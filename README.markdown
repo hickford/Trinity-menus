@@ -12,6 +12,10 @@ Usage
                             simulate n days in the future
       -v, --verbose         extra output useful for debugging
 
+Python modules imported
+-------
+BeautifulSoup, tidy and [PDFMiner](http://www.unixuser.org/~euske/python/pdfminer/index.html)
+
 Cronjob
 -------
 This emails the menus (if the script is successful) to a [mailing list](http://www.srcf.ucam.org/mailman/listinfo/tchm-announce)
