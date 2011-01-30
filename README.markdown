@@ -16,6 +16,8 @@ Python modules imported
 -------
 BeautifulSoup, tidy and [PDFMiner](http://www.unixuser.org/~euske/python/pdfminer/index.html)
 
+Note PDFMiner-20100424 is best.
+
 Cronjob
 -------
 This emails the menus (if the script is successful) to a [mailing list](http://www.srcf.ucam.org/mailman/listinfo/tchm-announce)

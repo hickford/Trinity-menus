@@ -60,6 +60,10 @@ for menu_url in reversed(menu_urls):
 	for x in filler:
 		output = output.replace(x,"")
 
+	pattern = "^week ending .*$"
+	p = re.compile(pattern,re.IGNORECASE | re.MULTILINE)
+	output = p.sub("",output)	
+
 	if today2 in output:
 
 		pattern = "\D(?:%s)(.*?)(%s|$)" % (today2,"|".join(set(dotw)-set([today1])))
