@@ -20,4 +20,4 @@ if __name__=="__main__":
     if term():
         sys.exit(0)
     else:
-        sys.exit("out of term") # this goes to standard error
+        sys.exit(1) # this goes to standard error
