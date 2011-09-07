@@ -26,6 +26,5 @@ This emails the menus (if the script is successful) to a [mailing list](http://w
 Mailing lists
 -------
 
-* tchm-outofterm@srcf.ucam.org
-* tchm-announce@srcf.ucam.org
-
+* tchm-announce@srcf.ucam.org - subscribe at http://www.srcf.ucam.org/mailman/listinfo/tchm-announce
+* tchm-outofterm@srcf.ucam.org - subscribe at http://www.srcf.ucam.org/mailman/listinfo/tchm-outofterm
