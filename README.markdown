@@ -24,8 +24,8 @@ Installation on the [SRCF](http://www.srcf.ucam.org/)
 2. Copy/link the two .py scripts to ~/bin
 3. Install [PDFMiner-20100424](http://pypi.python.org/pypi/pdfminer/20100424) locally, ie. `python setup.py install --home=~`
 4. Test `lunch.py`
-5. Test the cronjob command
-6. Install the cronjob below `crontab -e`
+5. Test the cronjob command below
+6. Install the cronjob `crontab -e`
 
 Cronjob
 -------
