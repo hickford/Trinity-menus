@@ -38,5 +38,5 @@ This emails the menus (assuming the `lunch.py` is successful) to either the in-t
 Mailing lists
 -------
 
-* In term: tchm-announce@srcf.ucam.org - subscribe at http://www.srcf.ucam.org/mailman/listinfo/tchm-announce
-* Out of term: tchm-outofterm@srcf.ucam.org - subscribe at http://www.srcf.ucam.org/mailman/listinfo/tchm-outofterm
+* In term: tchm-announce@srcf.ucam.org - subscribe at http://www.srcf.ucam.org/mailman/listinfo/tchm-announce , admin at http://www.srcf.ucam.org/mailman/admin/tchm-announce
+* Out of term: tchm-outofterm@srcf.ucam.org - subscribe at http://www.srcf.ucam.org/mailman/listinfo/tchm-outofterm , admin at http://www.srcf.ucam.org/mailman/admin/tchm-outofterm
