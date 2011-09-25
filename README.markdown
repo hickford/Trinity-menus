@@ -29,7 +29,7 @@ Installation on the [SRCF](http://www.srcf.ucam.org/)
 
 Cronjob
 -------
-This emails the menus (if the script is successful) to a [mailing list](http://www.srcf.ucam.org/mailman/listinfo/tchm-announce)
+This emails the menus (assuming the `lunch.py` is successful) to either the in-term or out-of-term mailing list
 
     30 5 * * * export PYTHONPATH=~/lib/python:"${PYTHONPATH}"; export PATH=~/bin:"${PATH}"; TMPFILE=`mktemp`; lunch.py > $TMPFILE && mail -s "Trinity College hall menu `date.py`" `if cam-term.py ; then echo "tchm-announce@srcf.ucam.org"; else echo "tchm-outofterm@srcf.ucam.org";fi;` < $TMPFILE
 
