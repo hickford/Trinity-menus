@@ -21,7 +21,7 @@ N.B. The layout analysis in PDFMiner changed between versions. I found PDFMiner-
 Installation on the [SRCF](http://www.srcf.ucam.org/)
 -------
 1. Clone this repository
-2. Copy/link the two .py scripts to ~/bin
+2. Link (or copy) the two .py scripts to `~/bin`
 3. Install [PDFMiner-20100424](http://pypi.python.org/pypi/pdfminer/20100424) locally, ie. `python setup.py install --home=~`
 4. Test `lunch.py`
 5. Test the cronjob command below
