@@ -21,6 +21,7 @@ Note PDFMiner-20100424 is best.
 Cronjob
 -------
 This emails the menus (if the script is successful) to a [mailing list](http://www.srcf.ucam.org/mailman/listinfo/tchm-announce)
+
     30 5 * * * PYTHONPATH=~/lib/python:"${PYTHONPATH}"; export PYTHONPATH; PATH=~/bin:"${PATH}"; TMPFILE=`mktemp`; lunch.py > $TMPFILE && mail -s "Trinity College hall menu `date.py`" `if cam-term.py ; then echo "tchm-announce@srcf.ucam.org"; else echo "tchm-outofterm@srcf.ucam.org";fi;` < $TMPFILE
 
 Mailing lists
