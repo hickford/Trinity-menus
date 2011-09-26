@@ -14,7 +14,7 @@ Usage
 
 Python modules imported
 -------
-BeautifulSoup, tidy and [PDFMiner](http://www.unixuser.org/~euske/python/pdfminer/index.html)
+BeautifulSoup, tidy, Django and [PDFMiner](http://www.unixuser.org/~euske/python/pdfminer/index.html)
 
 N.B. The layout analysis in PDFMiner changed between versions. I found PDFMiner-20100424 worked well.
 
